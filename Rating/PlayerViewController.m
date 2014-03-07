@@ -95,6 +95,46 @@
     return nil;
 }
 
+-(void)playerDetailsViewControllerDidCancel:(PlayerDetailViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)playerDetailsViewControllerDidSave:(PlayerDetailViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"AddPlayer"]){
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        PlayerDetailViewController *playerDetailViewController = [navigationController viewControllers][0];
+        playerDetailViewController.delegate = self;
+    }
+}
+
+-(void)playerDetailsViewControllerDidSave:(PlayerDetailViewController *)controller didAddPlayer:(Player *)player
+{
+    [self.players addObject:player];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.players count] - 1) inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if((self = [super initWithCoder:aDecoder])){
+        NSLog(@"init PlayerDetailViewController");
+    }
+    return self;
+}
+
+-(void)dealloc
+{
+    NSLog(@"delloc playerDetailViewController");
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

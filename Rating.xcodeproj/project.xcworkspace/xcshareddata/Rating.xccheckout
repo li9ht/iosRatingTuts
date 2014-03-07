@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D9394C60-3128-416D-90B1-72D0952D23B6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Rating</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5823022A-2F5E-4B4F-8298-88926CFCB305</key>
+		<string>https://github.com/li9ht/iosRatingTuts.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Rating.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5823022A-2F5E-4B4F-8298-88926CFCB305</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/li9ht/iosRatingTuts.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5823022A-2F5E-4B4F-8298-88926CFCB305</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5823022A-2F5E-4B4F-8298-88926CFCB305</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Rating</string>
+		</dict>
+	</array>
+</dict>
+</plist>

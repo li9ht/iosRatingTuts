@@ -37,6 +37,13 @@
     player.game = @"Bowling";
     player.rating = 2;
     [_players addObject:player];
+   
+    
+    player =[[Player alloc]init];
+    player.name = @"Faiz";
+    player.game = @"Bowling";
+    player.rating = 1;
+    [_players addObject:player];
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UINavigationController *navigationController = [tabBarController viewControllers][0];
