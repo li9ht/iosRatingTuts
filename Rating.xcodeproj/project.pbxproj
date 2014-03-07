@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D83DFE2218C9755700FCF7CC /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DFE2118C9755700FCF7CC /* PlayerDetailViewController.m */; };
+		D83DFE2518C9AF5300FCF7CC /* GamePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DFE2418C9AF5300FCF7CC /* GamePickerViewController.m */; };
 		D8FFABD518C874220053F233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FFABD418C874220053F233 /* Foundation.framework */; };
 		D8FFABD718C874220053F233 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FFABD618C874220053F233 /* CoreGraphics.framework */; };
 		D8FFABD918C874220053F233 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FFABD818C874220053F233 /* UIKit.framework */; };
@@ -64,6 +65,8 @@
 /* Begin PBXFileReference section */
 		D83DFE2018C9755700FCF7CC /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
 		D83DFE2118C9755700FCF7CC /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		D83DFE2318C9AF5300FCF7CC /* GamePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePickerViewController.h; sourceTree = "<group>"; };
+		D83DFE2418C9AF5300FCF7CC /* GamePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePickerViewController.m; sourceTree = "<group>"; };
 		D8FFABD118C874220053F233 /* Rating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FFABD418C874220053F233 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8FFABD618C874220053F233 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -172,6 +175,8 @@
 		D8FFABDA18C874220053F233 /* Rating */ = {
 			isa = PBXGroup;
 			children = (
+				D83DFE2318C9AF5300FCF7CC /* GamePickerViewController.h */,
+				D83DFE2418C9AF5300FCF7CC /* GamePickerViewController.m */,
 				D8FFAC0918C87D420053F233 /* Images */,
 				D8FFAC3D18C8846A0053F233 /* Player.h */,
 				D8FFAC3E18C8846A0053F233 /* Player.m */,
@@ -378,6 +383,7 @@
 				D8FFAC3C18C8804E0053F233 /* PlayerViewController.m in Sources */,
 				D8FFABE518C874220053F233 /* AppDelegate.m in Sources */,
 				D83DFE2218C9755700FCF7CC /* PlayerDetailViewController.m in Sources */,
+				D83DFE2518C9AF5300FCF7CC /* GamePickerViewController.m in Sources */,
 				D8FFABE118C874220053F233 /* main.m in Sources */,
 				D8FFAC4218C894F00053F233 /* PlayerCell.m in Sources */,
 				D8FFAC3F18C8846A0053F233 /* Player.m in Sources */,

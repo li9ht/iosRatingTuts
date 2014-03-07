@@ -164,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="275" y="-2138"/>
         </scene>
-        <!--Table View Controller - Choose Game-->
+        <!--Game Picker View Controller - Choose Game-->
         <scene sceneID="6T3-r1-Gyg">
             <objects>
-                <tableViewController id="Uac-bC-Fsr" sceneMemberID="viewController">
+                <tableViewController id="Uac-bC-Fsr" customClass="GamePickerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="06v-Ph-huP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,20 +1,21 @@
 //
-//  PlayerDetailViewController.m
+//  GamePickerViewController.m
 //  Rating
 //
 //  Created by bmtp-005 on 3/7/14.
 //  Copyright (c) 2014 PTM ukm. All rights reserved.
 //
 
-#import "PlayerDetailViewController.h"
+#import "GamePickerViewController.h"
 
-@interface PlayerDetailViewController ()
+@interface GamePickerViewController ()
 
 @end
 
-@implementation PlayerDetailViewController
+@implementation GamePickerViewController
 {
-    NSString *_game;
+    NSArray *_games;
+    NSUInteger _selectedIndex;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -29,7 +30,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.detailLabel.text = _game;
+    
+    _games = @[@"Angry Birds",
+               @"Chess",
+               @"Russian Roulette",
+               @"Starwars",
+               @"Counter Strike",
+               @"World of Warcraft"];
+    
+    _selectedIndex = [_games indexOfObject:self.game];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -43,32 +53,52 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if(indexPath.section==0){
-        [self.nameTextField becomeFirstResponder];
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    // Return the number of rows in the section.
+    return [_games count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"GameCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
+    cell.textLabel.text = _games[indexPath.row];
+    
+    if(indexPath.row == _selectedIndex){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    
+    
+    return cell;
 }
 
--(IBAction)cancel:(id)sender
+-(void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate playerDetailsViewControllerDidCancel:self];
-}
-
--(IBAction)done:(id)sender
-{
-    Player *player = [[Player alloc] init];
-    player.name = self.nameTextField.text;
-    player.game = _game;
-    player.rating = 1;
-    [self.delegate playerDetailsViewControllerDidSave:self didAddPlayer:player];
-}
-
--(void)gamePickerViewController:(GamePickerViewController *)controller didSelectGame:(NSString *)game
-{
-    _game = game;
-    self.detailLabel.text = _game;
-    [self.navigationController popViewControllerAnimated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(_selectedIndex != NSNotFound){
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0]];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    _selectedIndex = indexPath.row;
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    NSString *game = _games[indexPath.row];
+    [self.delegate gamePickerViewController:self didSelectGame:game];
 }
 
 /*
@@ -110,19 +140,16 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"PickGame"]){
-        GamePickerViewController *gamePickerViewController = segue.destinationViewController;
-        gamePickerViewController.delegate  = self;
-        gamePickerViewController.game = _game;
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 
-
+ */
 
 @end
